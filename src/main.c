@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: puzzlesanalytik <puzzlesanalytik@studen    +#+  +:+       +#+        */
+/*   By: reriebsc <reriebsc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/11 11:42:45 by puzzlesanal       #+#    #+#             */
-/*   Updated: 2025/11/12 16:30:01 by puzzlesanal      ###   ########.fr       */
+/*   Updated: 2025/11/12 20:17:23 by reriebsc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int32_t	main(int ac, char **av)
 		return (EXIT_FAILURE);
 	if (mlx_image_to_window(engin->mlx, engin->img, 0, 0) == -1)
 		return (EXIT_FAILURE);
-	drawing(engin);
+	draw(engin);
 	mlx_loop_hook(engin->mlx, ft_hook, engin);
 	mlx_resize_hook(engin->mlx, &ft_resize_hook, engin);
 	mlx_scroll_hook(engin->mlx, &ft_scroll_hook, engin);

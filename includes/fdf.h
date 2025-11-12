@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   fdf.h                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: puzzlesanalytik <puzzlesanalytik@studen    +#+  +:+       +#+        */
+/*   By: reriebsc <reriebsc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/11 13:15:38 by puzzlesanal       #+#    #+#             */
-/*   Updated: 2025/11/12 16:49:52 by puzzlesanal      ###   ########.fr       */
+/*   Updated: 2025/11/12 20:27:17 by reriebsc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@
 # include <stdlib.h>
 # include <string.h>
 # include <unistd.h>
+# include "libft/libft.h"
 
 # define TILE_SIZE 5
 # define SCALE 1000
@@ -147,7 +148,6 @@ typedef struct s_coords
 	int32_t			size;
 }					t_coords;
 
-//#################################################
 //#########Funktions
 //##################################################
 void				free_token(char **arr);
@@ -172,5 +172,16 @@ uint32_t			get_rgba(uint32_t r, uint32_t g, uint32_t b, uint32_t a);
 int32_t				ft_abs(int32_t num);
 void				project(t_engine *e);
 void				swap_coords(t_coord **a, t_coord **b);
+void				draw_line(t_coord *start, t_coord *end, mlx_image_t *img);
+void				fill_img(t_engine *engine, uint32_t color);
+void				translate_and_draw(t_engine *e, enum e_rot_dir dir);
+void				rotate_and_draw(t_engine *e, enum e_rot_dir axis_dir);
+void				scale_and_draw(t_engine *e, enum e_rot_dir axis_dir);
+void				reset_and_draw(t_engine *e);
+t_coords			*parse_input(char *file_path);
+uint32_t			convert_color(char *str);
+uint32_t			interpolate_colors(uint32_t c1, uint32_t c2,
+						uint32_t max, uint32_t t);
+
 
 #endif

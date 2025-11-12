@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   free.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: puzzlesanalytik <puzzlesanalytik@studen    +#+  +:+       +#+        */
+/*   By: reriebsc <reriebsc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/11 13:55:00 by puzzlesanal       #+#    #+#             */
-/*   Updated: 2025/11/12 14:44:50 by puzzlesanal      ###   ########.fr       */
+/*   Updated: 2025/11/12 19:48:57 by reriebsc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ void	engine_free(t_engine *engine)
 		mlx_delete_image(engine->mlx, engine->img);
 	if (engine->mlx)
 		mlx_terminate(engine->mlx);
-	pts_free(engine);
+	coords_free(engine);
 	if (engine->projektion)
 	{
 		if (engine->projektion->x)

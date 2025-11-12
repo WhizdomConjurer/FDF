@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   events.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: puzzlesanalytik <puzzlesanalytik@studen    +#+  +:+       +#+        */
+/*   By: reriebsc <reriebsc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/11 11:42:40 by puzzlesanal       #+#    #+#             */
-/*   Updated: 2025/11/12 16:29:20 by puzzlesanal      ###   ########.fr       */
+/*   Updated: 2025/11/12 19:43:14 by reriebsc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ void	ft_resize_hook(int32_t w, int32_t h, void *param)
 
 	e = param;
 	mlx_resize_image(e->img, (uint32_t)w, (uint32_t)h);
-	fill_img(e, BACKGROUND);
+	fill_img(e, 255);
 	draw(e);
 }
 

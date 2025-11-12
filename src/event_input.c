@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   event_input.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: puzzlesanalytik <puzzlesanalytik@studen    +#+  +:+       +#+        */
+/*   By: reriebsc <reriebsc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/12 15:38:29 by puzzlesanal       #+#    #+#             */
-/*   Updated: 2025/11/12 15:38:52 by puzzlesanal      ###   ########.fr       */
+/*   Updated: 2025/11/12 19:18:26 by reriebsc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

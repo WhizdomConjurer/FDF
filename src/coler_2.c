@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   coler_2.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: puzzlesanalytik <puzzlesanalytik@studen    +#+  +:+       +#+        */
+/*   By: reriebsc <reriebsc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/12 16:20:09 by puzzlesanal       #+#    #+#             */
-/*   Updated: 2025/11/12 16:58:40 by puzzlesanal      ###   ########.fr       */
+/*   Updated: 2025/11/12 20:16:35 by reriebsc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int32_t	ft_abs(int32_t num)
 {
 	int32_t	x;
 
-	x = num - 1;
+	x = -1;
 	if (num < 0)
 		x = x * num;
 	else

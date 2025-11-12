@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   projektion.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: puzzlesanalytik <puzzlesanalytik@studen    +#+  +:+       +#+        */
+/*   By: reriebsc <reriebsc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/12 14:50:29 by puzzlesanal       #+#    #+#             */
-/*   Updated: 2025/11/12 16:33:38 by puzzlesanal      ###   ########.fr       */
+/*   Updated: 2025/11/12 20:25:20 by reriebsc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,7 @@ void	project(t_engine *e)
 	int32_t	i;
 	int32_t	total;
 
-	reset_projection(e->projektion);
+	init_projection_meta(e->projektion, WIDTH, HEIGHT);
 	total = e->coords->width * e->coords->height;
 	i = 0;
 	while (i < total)

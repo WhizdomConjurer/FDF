@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line_bonus.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: puzzlesanalytik <puzzlesanalytik@studen    +#+  +:+       +#+        */
+/*   By: reriebsc <reriebsc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/10 13:05:48 by puzzlesanal       #+#    #+#             */
-/*   Updated: 2025/11/12 17:12:03 by puzzlesanal      ###   ########.fr       */
+/*   Updated: 2025/11/12 18:58:48 by reriebsc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ char	*ft_err_hand(char *arr, char *nxtl, char *line)
 
 char	*get_next_line(int fd)
 {
-	static char		matrix[OPEN_MAX][BUFFER_SIZE + 1];
+	static char		matrix[1024][BUFFER_SIZE + 1];
 	char			*line;
 	char			*nextline;
 

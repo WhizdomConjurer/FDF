@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   render.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: puzzlesanalytik <puzzlesanalytik@studen    +#+  +:+       +#+        */
+/*   By: reriebsc <reriebsc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/11 11:42:50 by puzzlesanal       #+#    #+#             */
-/*   Updated: 2025/11/12 17:04:05 by puzzlesanal      ###   ########.fr       */
+/*   Updated: 2025/11/12 20:27:00 by reriebsc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ static void	init_line_calc(t_line_calc *c, t_coord *start,
 	if (ori == VERT)
 		c->t = start->x;
 	else
-		start->y;
+		c->t = start->y;
 	c->p = 2 * c->d1 - c->d2;
 	c->i = 0;
 }
@@ -54,7 +54,7 @@ static void	draw_pixel(t_line_calc *c, mlx_image_t *img)
 	if (c->ori == VERT)
 		y = c->start->y + c->i;
 	else
-		c->t;
+		y = c->t;
 	if (x >= 0 && x < (int32_t)img->width
 		&& y >= 0 && y < (int32_t)img->height)
 		mlx_put_pixel(img, x, y, col);
