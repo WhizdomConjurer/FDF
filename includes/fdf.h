@@ -6,7 +6,7 @@
 /*   By: puzzlesanalytik <puzzlesanalytik@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/11 13:15:38 by puzzlesanal       #+#    #+#             */
-/*   Updated: 2025/11/12 16:24:06 by puzzlesanal      ###   ########.fr       */
+/*   Updated: 2025/11/12 16:49:52 by puzzlesanal      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,8 +91,8 @@ typedef struct s_projektion
 
 typedef struct s_line_calc
 {
-	struct s_point	*start;
-	struct s_point	*end;
+	struct s_coord	*start;
+	struct s_coord	*end;
 	enum e_line_ori	ori;
 	int32_t			dir;
 	int32_t			i;
@@ -170,5 +170,7 @@ void				handle_input(t_engine *e);
 uint32_t			*get_color(uint32_t color);
 uint32_t			get_rgba(uint32_t r, uint32_t g, uint32_t b, uint32_t a);
 int32_t				ft_abs(int32_t num);
+void				project(t_engine *e);
+void				swap_coords(t_coord **a, t_coord **b);
 
 #endif

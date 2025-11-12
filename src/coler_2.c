@@ -6,7 +6,7 @@
 /*   By: puzzlesanalytik <puzzlesanalytik@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/12 16:20:09 by puzzlesanal       #+#    #+#             */
-/*   Updated: 2025/11/12 16:32:07 by puzzlesanal      ###   ########.fr       */
+/*   Updated: 2025/11/12 16:58:40 by puzzlesanal      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,14 @@
 
 int32_t	ft_abs(int32_t num)
 {
+	int32_t	x;
+
+	x = num - 1;
 	if (num < 0)
-		-num;
+		x = x * num;
 	else
 		return (num);
-	return (num);
+	return (x);
 }
 
 uint32_t	get_rgba(uint32_t r, uint32_t g, uint32_t b, uint32_t a)

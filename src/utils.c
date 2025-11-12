@@ -6,7 +6,7 @@
 /*   By: puzzlesanalytik <puzzlesanalytik@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/11 11:42:56 by puzzlesanal       #+#    #+#             */
-/*   Updated: 2025/11/12 16:31:04 by puzzlesanal      ###   ########.fr       */
+/*   Updated: 2025/11/12 16:47:28 by puzzlesanal      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,4 +45,13 @@ void	update_bounds(t_projektion *p, int32_t i)
 		p->max_proy = p->y[i];
 	if (p->y[i] < p->min_proy)
 		p->min_proy = p->y[i];
+}
+
+void	swap_coords(t_coord **a, t_coord **b)
+{
+	t_coord	*tmp;
+
+	tmp = *a;
+	*a = *b;
+	*b = tmp;
 }
