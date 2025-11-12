@@ -6,7 +6,7 @@
 /*   By: puzzlesanalytik <puzzlesanalytik@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/11 13:15:38 by puzzlesanal       #+#    #+#             */
-/*   Updated: 2025/11/11 13:38:19 by puzzlesanal      ###   ########.fr       */
+/*   Updated: 2025/11/12 13:23:35 by puzzlesanal      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@
 
 # define WIDTH 1280
 # define HEIGHT 960
+# define BACKGROUND 255
+# define FOREGROUND 4294967295
 
 //#################################################
 //#########structs
@@ -101,5 +103,11 @@ typedef struct s_coords
 }					t_coords;
 
 
+//#################################################
+//#########Funktions
+//##################################################
+void	    free_token(char **arr);
+t_engine	*init_fdf_engine(char *av);
+t_coords    *init_coords(int token_count);
 
 #endif
