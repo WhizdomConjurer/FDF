@@ -6,7 +6,7 @@
 /*   By: reriebsc <reriebsc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/11 11:42:48 by puzzlesanal       #+#    #+#             */
-/*   Updated: 2025/11/12 21:34:50 by reriebsc         ###   ########.fr       */
+/*   Updated: 2025/11/12 21:58:20 by reriebsc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,6 @@ static int32_t	get_tokrn(char *path)
 		free(line);
 		line = get_next_line(fd);
 	}
-	printf("test get toke4\n");
 	return (tokrn);
 }
 
@@ -85,6 +84,7 @@ static int32_t	fill_coords(char *path, t_coords *coords)
 		line = get_next_line(fd);
 		++row;
 	}
+	coords -> size = row * col;
 	return (1);
 }
 
@@ -93,12 +93,9 @@ t_coords	*parse_input(char *file_path)
 	int32_t		token_count;
 	t_coords	*cords;
 
-	printf("test parse input\n");
 	token_count = get_tokrn(file_path);
-	printf("%d\n", token_count);
 	if (!token_count)
 		return (NULL);
-	printf("come frome count token\n");
 	cords = init_coords(token_count);
 	fill_coords(file_path, cords);
 	return (cords);
