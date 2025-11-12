@@ -6,13 +6,13 @@
 /*   By: puzzlesanalytik <puzzlesanalytik@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/11 11:42:48 by puzzlesanal       #+#    #+#             */
-/*   Updated: 2025/11/12 14:06:06 by puzzlesanal      ###   ########.fr       */
+/*   Updated: 2025/11/12 16:27:27 by puzzlesanal      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/fdf.h"
 
-static int32_t get_tokrn(char *path)
+static int32_t	get_tokrn(char *path)
 {
 	int		fd;
 	char	*line;
@@ -56,7 +56,6 @@ static int32_t	set_value(t_coords *coords, int col, int row, char *arr)
 	return (1);
 }
 
-
 static int32_t	fill_coords(char *path, t_coords *coords)
 {
 	int		fd;
@@ -77,7 +76,7 @@ static int32_t	fill_coords(char *path, t_coords *coords)
 				return (-1);
 		free_token(tokens);
 		coords -> height++;
-		coords -> width = col; 
+		coords -> width = col;
 		free(line);
 		line = get_next_line(fd);
 		++row;

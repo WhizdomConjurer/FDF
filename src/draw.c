@@ -6,7 +6,7 @@
 /*   By: puzzlesanalytik <puzzlesanalytik@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/12 14:53:21 by puzzlesanal       #+#    #+#             */
-/*   Updated: 2025/11/12 14:55:34 by puzzlesanal      ###   ########.fr       */
+/*   Updated: 2025/11/12 16:35:00 by puzzlesanal      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,8 +45,8 @@ static void	set_point(t_engine *e, t_coord *pt, int32_t idx)
 
 static void	draw_projection_lines(t_engine *e, int32_t idx)
 {
-	t_coord	start;
-	t_coord	end;
+	t_coord			start;
+	t_coord			end;
 	t_projektion	*p;
 
 	p = e->projektion;
@@ -62,7 +62,6 @@ static void	draw_projection_lines(t_engine *e, int32_t idx)
 		draw_line(&start, &end, e->img);
 	}
 }
-
 
 void	draw(t_engine *e)
 {

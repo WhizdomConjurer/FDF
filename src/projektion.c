@@ -6,7 +6,7 @@
 /*   By: puzzlesanalytik <puzzlesanalytik@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/12 14:50:29 by puzzlesanal       #+#    #+#             */
-/*   Updated: 2025/11/12 15:23:28 by puzzlesanal      ###   ########.fr       */
+/*   Updated: 2025/11/12 16:33:38 by puzzlesanal      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 static void	apply_transformations(t_engine *e, int32_t i)
 {
-	t_coords		*c;
-	t_projektion	*p;
+	t_coords			*c;
+	t_projektion		*p;
 	t_transformation	*t;
 
 	c = e->coords;
@@ -34,8 +34,10 @@ static void	rotate_x(t_engine *e, int32_t idx)
 
 	sin = e->lookup->sin[e->transformation->rot_x];
 	cos = e->lookup->cos[e->transformation->rot_x];
-	tmp[0] = (cos * e->projektion->y[idx] - sin * e->projektion->z[idx]) / SCALE;
-	tmp[1] = (sin * e->projektion->y[idx] + cos * e->projektion->z[idx]) / SCALE;
+	tmp[0] = (cos * e->projektion->y[idx] - sin * e->projektion->z[idx])
+		/ SCALE;
+	tmp[1] = (sin * e->projektion->y[idx] + cos * e->projektion->z[idx])
+		/ SCALE;
 	e->projektion->y[idx] = tmp[0];
 	e->projektion->z[idx] = tmp[1];
 }
@@ -48,8 +50,10 @@ static void	rotate_y(t_engine *e, int32_t idx)
 
 	sin = e->lookup->sin[e->transformation->rot_y];
 	cos = e->lookup->cos[e->transformation->rot_y];
-	tmp[0] = (cos * e->projektion->x[idx] + sin * e->projektion->z[idx]) / SCALE;
-	tmp[1] = (cos * e->projektion->z[idx] - sin * e->projektion->y[idx]) / SCALE;
+	tmp[0] = (cos * e->projektion->x[idx] + sin * e->projektion->z[idx])
+		/ SCALE;
+	tmp[1] = (cos * e->projektion->z[idx] - sin * e->projektion->y[idx])
+		/ SCALE;
 	e->projektion->x[idx] = tmp[0];
 	e->projektion->z[idx] = tmp[1];
 }
@@ -62,8 +66,10 @@ static void	rotate_z(t_engine *e, int32_t idx)
 
 	sin = e->lookup->sin[e->transformation->rot_z];
 	cos = e->lookup->cos[e->transformation->rot_z];
-	tmp[0] = (cos * e->projektion->x[idx] - sin * e->projektion->y[idx]) / SCALE;
-	tmp[1] = (sin * e->projektion->x[idx] + cos * e->projektion->y[idx]) / SCALE;
+	tmp[0] = (cos * e->projektion->x[idx] - sin * e->projektion->y[idx])
+		/ SCALE;
+	tmp[1] = (sin * e->projektion->x[idx] + cos * e->projektion->y[idx])
+		/ SCALE;
 	e->projektion->x[idx] = tmp[0];
 	e->projektion->y[idx] = tmp[1];
 }

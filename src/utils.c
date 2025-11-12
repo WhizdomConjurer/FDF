@@ -6,7 +6,7 @@
 /*   By: puzzlesanalytik <puzzlesanalytik@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/11 11:42:56 by puzzlesanal       #+#    #+#             */
-/*   Updated: 2025/11/12 15:21:02 by puzzlesanal      ###   ########.fr       */
+/*   Updated: 2025/11/12 16:31:04 by puzzlesanal      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,12 @@
 
 int32_t	*alloc_int_arr(uint32_t size)
 {
-	return (int32_t *)malloc(sizeof(int32_t) * size);
+	return ((int32_t *)malloc(sizeof(int32_t) * size));
 }
 
 uint32_t	*alloc_uint_arr(uint32_t size)
 {
-	return (uint32_t *)malloc(sizeof(uint32_t) * size);
+	return ((uint32_t *)malloc(sizeof(uint32_t) * size));
 }
 
 void	init_projection_meta(t_projektion *p, uint32_t w, uint32_t h)
