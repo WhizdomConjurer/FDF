@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   init.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: puzzlesanalytik <puzzlesanalytik@studen    +#+  +:+       +#+        */
+/*   By: reriebsc <reriebsc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/11 11:42:43 by puzzlesanal       #+#    #+#             */
-/*   Updated: 2025/11/12 16:39:39 by puzzlesanal      ###   ########.fr       */
+/*   Updated: 2025/11/12 21:36:19 by reriebsc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

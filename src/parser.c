@@ -6,11 +6,13 @@
 /*   By: reriebsc <reriebsc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/11 11:42:48 by puzzlesanal       #+#    #+#             */
-/*   Updated: 2025/11/12 20:23:10 by reriebsc         ###   ########.fr       */
+/*   Updated: 2025/11/12 21:34:50 by reriebsc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/fdf.h"
+#include <fcntl.h>
+
 
 static int32_t	get_tokrn(char *path)
 {
@@ -21,22 +23,23 @@ static int32_t	get_tokrn(char *path)
 	int		i;
 
 	fd = open(path, O_RDONLY);
-	if (!fd)
+	if (fd < 0)
 		return (-1);
 	line = get_next_line(fd);
 	tokrn = 0;
 	while (line)
 	{
 		tokens = ft_split(line, ' ');
-		i = 0;
-		while (++tokens)
+		i = -1;
+		while (tokens[i++])
 			++tokrn;
 		if (!tokens)
 			return (-1);
 		free_token(tokens);
 		free(line);
-		get_next_line(fd);
+		line = get_next_line(fd);
 	}
+	printf("test get toke4\n");
 	return (tokrn);
 }
 
@@ -90,9 +93,12 @@ t_coords	*parse_input(char *file_path)
 	int32_t		token_count;
 	t_coords	*cords;
 
+	printf("test parse input\n");
 	token_count = get_tokrn(file_path);
+	printf("%d\n", token_count);
 	if (!token_count)
 		return (NULL);
+	printf("come frome count token\n");
 	cords = init_coords(token_count);
 	fill_coords(file_path, cords);
 	return (cords);

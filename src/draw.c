@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   draw.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: puzzlesanalytik <puzzlesanalytik@studen    +#+  +:+       +#+        */
+/*   By: reriebsc <reriebsc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/12 14:53:21 by puzzlesanal       #+#    #+#             */
-/*   Updated: 2025/11/12 16:35:00 by puzzlesanal      ###   ########.fr       */
+/*   Updated: 2025/11/12 21:44:18 by reriebsc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ void	draw(t_engine *e)
 {
 	int32_t	i;
 
-	fill_img(e, BACKGROUND);
+	fill_img(e, 255);
 	project(e);
 	get_offset(e);
 	i = 0;
