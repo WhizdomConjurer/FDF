@@ -6,7 +6,7 @@
 /*   By: puzzlesanalytik <puzzlesanalytik@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/11 13:15:38 by puzzlesanal       #+#    #+#             */
-/*   Updated: 2025/11/12 14:05:58 by puzzlesanal      ###   ########.fr       */
+/*   Updated: 2025/11/12 15:21:27 by puzzlesanal      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,17 @@
 # define FDF_H
 
 # include "MLX42/include/MLX42/MLX42.h"
+# include <errno.h>
 # include <fcntl.h>
+# include <math.h>
+# include <stdint.h>
 # include <stdio.h>
 # include <stdlib.h>
+# include <string.h>
 # include <unistd.h>
 
+# define TILE_SIZE 5
+# define SCALE 1000
 # define WIDTH 1280
 # define HEIGHT 960
 # define BACKGROUND 255
@@ -43,6 +49,28 @@ enum				e_rot_dir
 	Z_POS,
 	Z_NEG
 };
+
+typedef struct s_transformation
+{
+	int			rot_x;
+	int			rot_y;
+	int			rot_z;
+	int			base_scl;
+	int			base_scl_x;
+	int			base_scl_y;
+	int			base_scl_z;
+	int			scl_x;
+	int			scl_y;
+	int			scl_z;
+	int			ofst_x;
+	int			ofst_y;
+}					t_transformation;
+
+typedef struct s_lookup
+{
+	int			sin[360];
+	int			cos[360];
+}					t_lookup;
 
 typedef struct s_projektion
 {
@@ -87,9 +115,9 @@ typedef struct s_engine
 	mlx_t			        *mlx;
 	mlx_image_t		        *img;
 	struct s_coords	        *coords;
-	struct s_projektion	*projektion;
+	struct s_projektion		*projektion;
 	struct s_lookup	        *lookup;
-	struct s_trans	        *trans;
+	struct s_transformation	*transformation;
 }					t_engine;
 
 typedef struct s_lexer
@@ -123,14 +151,19 @@ typedef struct s_coords
 //#################################################
 //#########Funktions
 //##################################################
-void	        free_token(char **arr);
-t_engine	    *init_fdf_engine(char *av);
-t_coords        *init_coords(int token_count);
-void	        engine_free(t_engine *engine);
-void	        init_projection_meta(t_projektion *p, uint32_t w, uint32_t h);
-uint32_t	    *alloc_uint_arr(uint32_t size);
-int32_t	        *alloc_int_arr(uint32_t size);
-t_projektion	*init_projektion(uint32_t w, uint32_t h);
+void	        	free_token(char **arr);
+t_engine	    	*init_fdf_engine(char *av);
+t_coords        	*init_coords(int token_count);
+void	        	engine_free(t_engine *engine);
+void	        	init_projection_meta(t_projektion *p, uint32_t w, uint32_t h);
+uint32_t	    	*alloc_uint_arr(uint32_t size);
+int32_t	        	*alloc_int_arr(uint32_t size);
+t_projektion		*init_projektion(uint32_t w, uint32_t h);
+t_transformation	*init_transformation(void);
+void				get_offset(t_engine *e);
+void				draw(t_engine *e);
+void				update_bounds(t_projektion *p, int32_t i);
+
 
 
 #endif

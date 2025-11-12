@@ -6,7 +6,7 @@
 /*   By: puzzlesanalytik <puzzlesanalytik@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/11 11:42:56 by puzzlesanal       #+#    #+#             */
-/*   Updated: 2025/11/12 14:06:01 by puzzlesanal      ###   ########.fr       */
+/*   Updated: 2025/11/12 15:21:02 by puzzlesanal      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,4 +33,16 @@ void	init_projection_meta(t_projektion *p, uint32_t w, uint32_t h)
 	p->min_prox = 2147483647;
 	p->max_proy = -2147483648;
 	p->min_proy = 2147483647;
+}
+
+void	update_bounds(t_projektion *p, int32_t i)
+{
+	if (p->x[i] > p->max_prox)
+		p->max_prox = p->x[i];
+	if (p->x[i] < p->min_prox)
+		p->min_prox = p->x[i];
+	if (p->y[i] > p->max_proy)
+		p->max_proy = p->y[i];
+	if (p->y[i] < p->min_proy)
+		p->min_proy = p->y[i];
 }

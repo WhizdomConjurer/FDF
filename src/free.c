@@ -6,7 +6,7 @@
 /*   By: puzzlesanalytik <puzzlesanalytik@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/11 13:55:00 by puzzlesanal       #+#    #+#             */
-/*   Updated: 2025/11/12 14:06:03 by puzzlesanal      ###   ########.fr       */
+/*   Updated: 2025/11/12 14:44:50 by puzzlesanal      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,8 +59,8 @@ void	engine_free(t_engine *engine)
 	}
 	if (engine->lookup)
 		free(engine->lookup);
-	if (engine->trans)
-		free(engine->trans);
+	if (engine->transformation)
+		free(engine->transformation);
 	if (engine)
 		free(engine);
 }

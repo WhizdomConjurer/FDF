@@ -6,7 +6,7 @@
 /*   By: puzzlesanalytik <puzzlesanalytik@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/11 11:42:43 by puzzlesanal       #+#    #+#             */
-/*   Updated: 2025/11/12 14:06:08 by puzzlesanal      ###   ########.fr       */
+/*   Updated: 2025/11/12 14:39:05 by puzzlesanal      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,48 @@ t_coords    *init_coords(int token_count)
     return (coords);
 }
 
+t_transformation	*init_transformation(void)
+{
+	t_transformation	*trans;
+
+	trans = malloc(sizeof(t_transformation));
+	if (!trans)
+		return (NULL);
+	trans->ofst_x = 0;
+    trans->ofst_y = 0;
+    trans->base_scl = SCALE;
+	trans->scl_x = TILE_SIZE;
+	trans->scl_y = TILE_SIZE;
+	trans->scl_z = TILE_SIZE;
+	trans->base_scl_x = trans->scl_x;
+	trans->base_scl_y = trans->scl_y;
+	trans->base_scl_z = trans->scl_z;
+    trans->rot_x = ((54 % 360) + 360) % 360;
+	trans->rot_y = ((0 % 360) + 360) % 360;
+	trans->rot_z = ((35 % 360) + 360) % 360;
+	return (trans);
+}
+
+t_lookup	*init_lookup(void)
+{
+	int32_t		idx;
+	double		rad;
+	t_lookup	*lookup;
+
+	lookup = malloc(sizeof(t_lookup));
+	if (!lookup)
+		return (NULL);
+	idx = 0;
+	while (idx < 360)
+	{
+		rad = idx * M_PI / 180;
+		lookup->cos[idx] = (int)(cos(rad) * SCALE + 0.5);
+		lookup->sin[idx] = (int)(sin(rad) * SCALE + 0.5);
+		idx++;
+	}
+	return (lookup);
+}
+
 t_engine	*init_fdf_engine(char *av)
 {
 	t_engine	*engine;
@@ -66,6 +108,12 @@ t_engine	*init_fdf_engine(char *av)
     engine -> projektion = init_projektion(engine->coords->width, engine->coords->height);
     if (!engine->projektion)
         return(engine_free(engine), NULL);
-    
+    engine -> transformation = init_transformation();
+    if (!engine->transformation)
+        return (engine_free(engine), NULL);
+    engine -> lookup = init_lookup();
+    if (!engine->lookup)
+        return (engine_free(engine), NULL);
+    return (engine);
 }
 
