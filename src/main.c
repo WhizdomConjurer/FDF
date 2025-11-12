@@ -6,7 +6,7 @@
 /*   By: reriebsc <reriebsc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/11 11:42:45 by puzzlesanal       #+#    #+#             */
-/*   Updated: 2025/11/12 20:17:23 by reriebsc         ###   ########.fr       */
+/*   Updated: 2025/11/12 20:46:46 by reriebsc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,8 @@ int32_t	main(int ac, char **av)
 	mlx_loop_hook(engin->mlx, ft_hook, engin);
 	mlx_resize_hook(engin->mlx, &ft_resize_hook, engin);
 	mlx_scroll_hook(engin->mlx, &ft_scroll_hook, engin);
+	write(1, "w", 1);
 	mlx_loop(engin->mlx);
+	write(1, "a", 1);
 	return (engine_free(engin), EXIT_SUCCESS);
 }
